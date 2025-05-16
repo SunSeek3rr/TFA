@@ -1,0 +1,94 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'components/type';
+@import 'utils/reset';
+
+body{
+    font-family: 'Aspekta Variable';
+    line-height: 140%;
+    font-weight: 400;
+}
+.h2{
+    font-size: clamp(1.75rem, 1.158rem + 2.524vw, 4.188rem);
+}
+
+.header{
+    &__menu{
+        font-size: 21px;
+    }
+}
+.main{
+    & .accueil{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title{
+        & .title__h1{
+            font-size: clamp(5.625rem, 4.563rem + 4.531vw, 10rem);
+            line-height: 100%;
+            text-align: center;
+        }
+        & .title__p{
+            text-align: center;
+            line-height: 100%;
+        }
+    }
+}
+    & .fonctionnement{
+        &__p{
+            font-size: clamp(1rem, 0.924rem + 0.324vw, 1.313rem);
+        }
+        &__details{
+            & .details__el{
+
+                & .details__title{
+                    font-size: 21px;
+                }
+                & .details__text{
+                    font-size: 16px;
+                }
+            }
+
+        }
+    }
+
+    .avis{
+        &__el{
+            & .el__nom{
+                font-size: clamp(1.313rem, 0.857rem + 1.942vw, 3.188rem);
+            }
+            & .el__fonction{
+                font-size: clamp(0.75rem, 0.613rem + 0.583vw, 1.313rem);
+            }
+            & .el__text{
+                font-size: clamp(1rem, 0.924rem + 0.324vw, 1.313rem);
+            }
+        }
+    }
+
+    .experience{
+        &__ctaText{
+            font-size: clamp(1.313rem, 0.857rem + 1.942vw, 3.188rem);
+        }
+    }
+}
+
+.footer{
+    &__title{
+        font-size: clamp(2.375rem, 1.6rem + 3.308vw, 3.188rem);
+        display: inline;
+        border-bottom: 1px solid $light-textcolor;
+        padding-right: 8px;
+    }
+    &__menu{
+        & .menu__el{
+            font-size: clamp(0.75rem, 0.511rem + 1.018vw, 1rem);
+        }
+    }
+    &__links{
+        & .links__el{
+            font-size: clamp(0.75rem, 0.511rem + 1.018vw, 1rem);
+        }
+    }
+}
