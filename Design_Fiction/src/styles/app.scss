@@ -92,9 +92,9 @@ body{
 
     }
 }
-#Accueil, #Fonctionnement, #Avis, #Experience{
-    scroll-margin-top: clamp(3.5rem, 2.408rem + 4.66vw, 8rem);
-}
+// #Accueil, #Fonctionnement, #Avis, #Experience{
+//     scroll-margin-top: clamp(3.5rem, 2.408rem + 4.66vw, 8rem);
+// }
 .main{
     .accueil{
     width: 100%;
@@ -369,4 +369,79 @@ body{
         }
     }
 }
+}
+
+// SVG ANIM BTN
+
+.btn{
+    margin-top: 32px;
+    width: 28%;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    
+    .cls-1 {
+    stroke-miterlimit: 4;
+    stroke-width: 1px;
+    }
+
+    .cls-1, .cls-2, .cls-3, .cls-5 {
+        fill: none;
+    }
+
+    .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #ffba0a;
+    }
+
+    .cls-8 {
+        font-family: 'AspektaVariable_500.000wght_0ital', 'Aspekta Variable';
+        font-size: 16px;
+        font-variation-settings: 'wght' 500, 'wdth' 0;
+    }
+
+    .cls-2 {
+        stroke-miterlimit: 4;
+        stroke-width: 1px;
+    }
+
+    .cls-4 {
+        fill: rgba(255, 186, 10, .4);
+    }
+    .cls-6, .cls-7 {
+        fill: #100700;
+    }
+    .cls-7, .cls-5 {
+        isolation: isolate;
+    }
+
+    .cls-7, .cls-5, .cls-6 {
+        opacity: 0;
+    }
+
+    .cls-5 {
+        stroke: #100700;
+        stroke-linecap: round;
+        stroke-width: 8px;
+    }
+    .cls-3{
+        &.Hex{
+           fill: rgba(255, 186, 10, 0); 
+        }
+    }
+    .cls-3, .cls-4{
+        &.Hex.Hex-hover{
+            fill: #FFBA0A;
+            transition: fill 0.3s cubic-bezier(0.14, 1.07, 0.66, 1); 
+        }
+    }
+    #Hex1, #Hex2, #Hex3, #Hex4, #Hex5, #Hex6{
+        transition: all 0.3s cubic-bezier(0.14, 1.07, 0.66, 1);
+    }
+    #Btn{
+        cursor: pointer;
+
+        text{
+            user-select: none;
+        }
+    }
 }
