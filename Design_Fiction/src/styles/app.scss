@@ -3,92 +3,370 @@
 @import 'components/type';
 @import 'utils/reset';
 
+html, body{
+        overflow-x:hidden;
+        width: 100dvw;
+}
 body{
     font-family: 'Aspekta Variable';
-    line-height: 140%;
     font-weight: 400;
+    background-color: $light-bgcolor;
 }
 .h2{
     font-size: clamp(1.75rem, 1.158rem + 2.524vw, 4.188rem);
+    margin: clamp(7rem, 5.301rem + 7.249vw, 14rem) 0 clamp(4rem, 3.029rem + 4.142vw, 8rem) 0;
+    line-height: 160%;
+    width: 100%;
+    font-weight: 600;
 }
 
 .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
     &__menu{
         font-size: 21px;
+        height: clamp(2.5rem, 2.136rem + 1.553dvw, 4rem);
+        padding: clamp(0.5rem, 0.136rem + 1.553dvw, 2rem) clamp(1rem, -0.699rem + 7.249dvw, 8rem);
+        display: flex;
+        justify-content: space-between;
+        background-color: $light-bgcolor;
+    }
+    & .menu__list{
+        width: 100dvw;
+        height: 100dvh;
+        background-color: $light-bgcolor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        transform: translateX(100vw) ;
+        transition: all 0.3s ease-out;
+    }
+    & .menu__el{
+        margin-bottom: 16px;
+        & a {
+            color: $light-emcolor;
+        }
+    }
+    & .menu__logo{
+        width: clamp(2.5rem, 2.136rem + 1.553dvw, 4rem);
+        height: clamp(2.5rem, 2.136rem + 1.553dvw, 4rem);
+        z-index: 11;
+    }
+    & .menu__btn{
+        background-color: transparent;
+        border: none;
+        font-size: clamp(2.375rem, 2.178rem + 0.841dvw, 3.188rem);
+        color: $light-textcolor;
+        min-width: 40px;
+        min-height: 40px;
+        height: fit-content;
+        line-height: 100%;
+        cursor: pointer;
+        position: relative;
+    }
+    & .menu__btn::before{
+        content:"\2630";
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 11;
+    }
+    &__menu.menu-open{
+        & .menu__list{
+            transform: translateX(0vw);
+        }
+        & .menu__btn::before{
+        content:"\2715";
+    }
+
     }
 }
+#Accueil, #Fonctionnement, #Avis, #Experience{
+    scroll-margin-top: clamp(3.5rem, 2.408rem + 4.66vw, 8rem);
+}
 .main{
-    & .accueil{
+    .accueil{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: calc(100vh + clamp(3.5rem, 0.951rem + 10.874vw, 14rem));
+    line-height: 140%;
     &__title{
+        margin-top: clamp(6rem, 5.029rem + 4.142vw, 10rem);
         & .title__h1{
             font-size: clamp(5.625rem, 4.563rem + 4.531vw, 10rem);
             line-height: 100%;
             text-align: center;
+            font-weight: 500;
         }
         & .title__p{
             text-align: center;
             line-height: 100%;
+            font-size: clamp(1rem, 0.818rem + 0.777vw, 1.75rem);
+            font-weight: 500;
         }
     }
+    &__deco{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: clamp(3.5rem, 0.951rem + 10.874vw, 14rem);
+        left: 0;
+        z-index: -1;
+        & img{
+            width: 100vw;
+        }
+        // Séparer left et right pour que ça s'adapte au support
+    }
 }
+    & .fonctionnement, .avis, .experience, ~ .footer{
+        padding: 0 16px;
+    }
+
     & .fonctionnement{
+        &__title{
+            margin-top: clamp(4rem, 3.272rem + 3.107vw, 7rem);
+        }
+        &__div{
+            width: 100%;
+        }
         &__p{
             font-size: clamp(1rem, 0.924rem + 0.324vw, 1.313rem);
         }
+        &__p:first-of-type{
+            margin-bottom: 16px;
+        }
         &__details{
+            margin-top: clamp(4rem, 2.092rem + 8.142vw, 6rem);
+            & .details__div{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
             & .details__el{
-
+                margin-bottom: margin-to-rem(32);
+                max-width: 47%;
                 & .details__title{
+                    color: $light-emcolor;
                     font-size: 21px;
+                    margin-bottom: margin-to-rem(16);
                 }
                 & .details__text{
                     font-size: 16px;
                 }
             }
+            & .details__el:nth-of-type(5), .details__el:nth-of-type(6){
+                margin-bottom: 0;
+            }
 
+        }
+        &__visuel{
+            margin-top: clamp(4rem, 2.092rem + 8.142vw, 6rem);
         }
     }
 
     .avis{
         &__el{
+            position: relative;
+            margin-bottom: clamp(4rem, 2.092rem + 8.142vw, 6rem);
+            max-width: 75%;
             & .el__nom{
                 font-size: clamp(1.313rem, 0.857rem + 1.942vw, 3.188rem);
             }
             & .el__fonction{
                 font-size: clamp(0.75rem, 0.613rem + 0.583vw, 1.313rem);
             }
+            & .el__fonction, & .el__nom{
+                color: $light-emcolor;
+            }
             & .el__text{
                 font-size: clamp(1rem, 0.924rem + 0.324vw, 1.313rem);
             }
+        }
+        &__el::before{
+            content: "";
+            background-image: url("../assets/images/avis_symbol.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 64px;
+            height: 64px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -80px;
+        }
+        &__professeurs{
+            & .avis__el:last-of-type{
+                margin-bottom: 0;
+    
+            }
+        }
+        &__professeurs, &__eleves{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
     }
 
     .experience{
         &__ctaText{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             font-size: clamp(1.313rem, 0.857rem + 1.942vw, 3.188rem);
+            margin-bottom: clamp(4rem, 3.029rem + 4.142vw, 8rem);
+            line-height: 120%;
+            & .h3__span:last-of-type{
+                color: $light-emcolor;
+            }
         }
     }
 }
 
 .footer{
+    height:fit-content;
     &__title{
         font-size: clamp(2.375rem, 1.6rem + 3.308vw, 3.188rem);
         display: inline;
         border-bottom: 1px solid $light-textcolor;
         padding-right: 8px;
+        line-height: normal;
     }
     &__menu{
+        margin: 16px 0 clamp(2rem, 1.515rem + 2.071vw, 4rem) 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
         & .menu__el{
             font-size: clamp(0.75rem, 0.511rem + 1.018vw, 1rem);
+
+            & a{
+                color: $light-emcolor;
+            }
+        }
+        & .menu__el:first-of-type{
+            margin-bottom: 16px;
         }
     }
     &__links{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: clamp(2rem, 1.515rem + 2.071vw, 4rem);
         & .links__el{
             font-size: clamp(0.75rem, 0.511rem + 1.018vw, 1rem);
+            color: $light-textcolor;
         }
     }
+}
+
+@media (min-width : 768px){
+    .main{
+    & .fonctionnement, .avis, .experience, ~ .footer{
+        padding: 0 64px;
+    }
+    .avis{
+        &__el{
+
+            & .el__nom{
+                font-size: 38px;
+            }
+            & .el__fonction{
+                font-size: 16px;
+            }
+            & .el__text{
+                font-size: 21px;
+            }
+        }
+        &__el::before{
+            width: 112px;
+            height: 112px;
+            left: -144px;
+        }
+    }
+        & .fonctionnement{
+        &__details{
+            & .details__el{
+                max-width: 48%;
+            }
+        }
+        }
+}
+}
+
+@media (min-width : 1440px){
+    .main{
+    & .fonctionnement, .avis, .experience{
+        padding: 0 128px;
+    }
+    & .fonctionnement{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__p{
+           margin-left: 64px; 
+        }
+        &__p:last-of-type{
+            max-width: 70ch;
+        }
+        &__details{
+            max-width: 50%;
+            height: fit-content;
+            padding-top: 64px;
+            & .details__div{
+                & .details__el{
+                    width: 50%;
+                }
+            }
+        }
+    }
+    & .avis{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__professeurs, &__eleves{
+            max-width: 50%;
+        }
+        &__el{
+            & .el__nom{
+                font-size: 51px;
+            }
+            & .el__fonction{
+                font-size: 21px;
+            }
+            & .el__text{
+                font-size: 21px;
+            }
+    }
+        &__el::before{
+            width: 112px;
+            height: 112px;
+            left: -144px;
+        }
+    }
+    ~ .footer{
+        padding: 0 512px;
+        & .footer__menu{
+            width: 45%;
+        }
+        & .footer__links{
+            justify-content: space-around;
+            width: 50%;
+            margin: 0 auto clamp(2rem, 1.515rem + 2.071vw, 4rem) auto;
+        }
+    }
+}
 }

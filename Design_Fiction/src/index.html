@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <title>Hex-IA - Design Fiction</title>
   <meta charset="UTF-8" />
@@ -33,6 +33,8 @@
       <li class="menu__el"><a href="#Avis">02 / Ce qu'ils en disent</a></li>
       <li class="menu__el"><a href="#Experience">03 / Expérience</a></li>
     </ul>
+    <a href="#Accueil"><img src="assets/images/logo.png" alt="Logo du projet" class="menu__logo"></a>
+    <button class="menu__btn"></button>
   </nav>
 
 </header>
@@ -40,6 +42,7 @@
 <main class="main">
 
   <section class="accueil" id="Accueil">
+    <div class="accueil__deco"><img src="assets/images/Accueil_deco-mobile.svg" alt=""></div>
     <div class="accueil__title">
       <h1 class="title__h1">Hex-IA</h1>
       <p class="title__p">La ruche au service de l'apprentissage collectif</p>
@@ -50,44 +53,52 @@
 
   <section class="fonctionnement" id="Fonctionnement">
     <h2 class="fonctionnement__title h2">01 / Fonctionnement</h2>
-    <p class="fonctionnement__p">Hex-IA combine <b class="p__bold">structure</b>, <b class="p__bold">collaboration</b>, <b class="p__bold">adaptation</b>, <b class="p__bold">transmission</b>, <b class="p__bold">optimisation</b> et <b class="p__bold">mémoire</b>. 
-            Grâce à ces 6 points, <b class="p__bold">notre service vous permet d’acquérir du savoir de manière optimale</b>, et surtout, de manière <b class="p__bold">consistante</b>.</p>
+    <div class="fonctionnement__div">
+      <p class="fonctionnement__p">Hex-IA combine <b class="p__bold">structure</b>, <b class="p__bold">collaboration</b>, <b class="p__bold">adaptation</b>, <b class="p__bold">transmission</b>, <b class="p__bold">optimisation</b> et <b class="p__bold">mémoire</b>.</p>
+      <p class="fonctionnement__p">Grâce à ces 6 points, <b class="p__bold">notre service vous permet d’acquérir du savoir de manière optimale</b>, et surtout, de manière <b class="p__bold">consistante</b>.</p>
+    </div>
     <div class="fonctionnement__details">
 
-      <div class="details__el">
+      <div class="details__div">
+        <div class="details__el">
         
-        <h3 class="details__title">Structure</h3>
-        <p class="details__text">Matière, Exercice, Correction, Révision, Test, Validation</p>
+          <h3 class="details__title">Structure</h3>
+          <p class="details__text">Matière, Exercice, Correction, Révision, Test, Validation</p>
+        </div>
+        <div class="details__el">
+        
+          <h3 class="details__title">Collaboration</h3>
+          <p class="details__text">Données vérifiées et approuvées par la ruche</p>
+        </div>
       </div>
 
-      <div class="details__el">
+      <div class="details__div">
+        <div class="details__el">
         
-        <h3 class="details__title">Collaboration</h3>
-        <p class="details__text">Données vérifiées et approuvées par la ruche</p>
+          <h3 class="details__title">Adaptation</h3>
+          <p class="details__text">Prise en compte rigoureuse de la progression de l'élève pour s'y adapter et combler ses difficultés</p>
+        </div>
+              <div class="details__el">
+        
+          <h3 class="details__title">Transmission</h3>
+          <p class="details__text">Cohérence des sujets et de leur enchainement</p>
+        </div>
       </div>
 
-      <div class="details__el">
-        
-        <h3 class="details__title">Adaptation</h3>
-        <p class="details__text">Prise en compte rigoureuse de la progression de l'élève pour s'y adapter et combler ses difficultés</p>
-      </div>
-            <div class="details__el">
-        
-        <h3 class="details__title">Transmission</h3>
-        <p class="details__text">Cohérence des sujets et de leur enchainement</p>
-      </div>
-            <div class="details__el">
-        
-        <h3 class="details__title">Optimisation</h3>
-        <p class="details__text">Évaluation continue du système d’apprentissage et réajustement</p>
-      </div>
-            <div class="details__el">
-        
-        <h3 class="details__title">Mémoire</h3>
-        <p class="details__text">Suivi complet de l'élève dans le temps et sauvegarde des données</p>
-      </div>
+            <div class="details__div">
+              <div class="details__el">
+                      
+                      <h3 class="details__title">Optimisation</h3>
+                      <p class="details__text">Évaluation continue du système d’apprentissage et réajustement</p>
+                    </div>
+              <div class="details__el">
+                      
+                      <h3 class="details__title">Mémoire</h3>
+                      <p class="details__text">Suivi complet de l'élève dans le temps et sauvegarde des données</p>
+                    </div>
+            </div>
     </div>
-    <img src="" alt="Visuel alignant les points précédents autour d'un hexagone pour rappeler son fonctionnement basé sur la structure alvéolaire" class="fonctionnement__visuel">
+    <img src="assets/images/fonctionnement-graph-mobile.svg" alt="Visuel alignant les points précédents autour d'un hexagone pour rappeler son fonctionnement basé sur la structure alvéolaire" class="fonctionnement__visuel">
   </section>
 
   <section class="avis" id="Avis">
@@ -140,13 +151,18 @@
 
 </main>
 
+<!-- Changer pour 2 ul avec chacun 2 li -->
 <footer class="footer">
   <h3 class="footer__title h3">Hex-IA</h3>
     <ul class="footer__menu">
-      <li class="menu__el"><a href="#Accueil">00 / Accueil</a></li>
-      <li class="menu__el"><a href="#Fonctionnement">01 / Fonctionnement</a></li>
-      <li class="menu__el"><a href="#Avis">02 / Ce qu'ils en disent</a></li>
-      <li class="menu__el"><a href="#Experience">03 / Expérience</a></li>
+      <span class="menu__div">
+        <li class="menu__el"><a href="#Accueil">00 / Accueil</a></li>
+        <li class="menu__el"><a href="#Fonctionnement">01 / Fonctionnement</a></li>
+      </span>
+      <span class="menu__div">
+        <li class="menu__el"><a href="#Avis">02 / Ce qu'ils en disent</a></li>
+        <li class="menu__el"><a href="#Experience">03 / Expérience</a></li>
+      </span>
     </ul>
     <div class="footer__links">
       <a href="" class="links__el">Conditions d'utilisations</a>
