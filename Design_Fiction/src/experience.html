@@ -24,25 +24,36 @@
   <script src="scripts/app.js" defer></script>
 </head>
 <body>
-<header class="header">
+  <!-- Changer la nav pour 2 btns retour et terminer -->
+<!-- <header class="header">
 
   <nav class="header__menu">
     <ul class="menu__list">
-      <li class="menu__el"><a href="#Accueil">00 / Accueil</a></li>
-      <li class="menu__el"><a href="#Fonctionnement">01 / Fonctionnement</a></li>
-      <li class="menu__el"><a href="#Avis">02 / Ce qu'ils en disent</a></li>
-      <li class="menu__el"><a href="#Experience">03 / Expérience</a></li>
+      <li class="menu__el"><button class="menu__btn--back"><- Retour</button></li>
+      <li class="menu__el"><button class="menu__btn--end">Terminer l'expérience</button></li>
     </ul>
-    <a href="#Accueil"><img src="assets/images/logo.png" alt="Logo du projet" class="menu__logo"></a>
-    <button class="menu__btn"></button>
   </nav>
 
-</header>
+</header> -->
+
+<section class="presentation">
+  <form action="" class="presentation__form">
+    <label class="presentation__label--name" for="Name">Comment vous appelez vous ?</label>
+    <input class="presentation__input--name" type="text" name="Name" id="Name" placeholder="Sébastien">
+    <button type="button" class="presentation__btn">Valider</button>
+  </form>
+</section>
+
+<section class="classes">
+  <h2 class="classes__h2">Bonjour Sébastien !</h2>
+  <p class="classes__p">Vous pouvez consulter vos classes ci-dessous</p>
 
 
+</section>
 
 <!-- Changer span>li pour li>span-->
-<footer class="footer">
+
+<!-- <footer class="footer">
   <h3 class="footer__title h3">Hex-IA</h3>
     <ul class="footer__menu">
       <span class="menu__div">
@@ -59,7 +70,7 @@
       <a href="" class="links__el">Jobs</a>
       <a href="" class="links__el">Contact</a>
     </div>
-</footer>
+</footer> -->
 
 </body>
 </html>

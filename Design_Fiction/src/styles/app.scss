@@ -92,9 +92,7 @@ body{
 
     }
 }
-// #Accueil, #Fonctionnement, #Avis, #Experience{
-//     scroll-margin-top: clamp(3.5rem, 2.408rem + 4.66vw, 8rem);
-// }
+
 .main{
     .accueil{
     width: 100%;
@@ -272,6 +270,8 @@ body{
     }
 }
 
+
+
 @media (min-width : 768px){
     .main{
     & .fonctionnement, .avis, .experience, ~ .footer{
@@ -331,6 +331,9 @@ body{
                     width: 50%;
                 }
             }
+        }
+        &__visuel{
+            max-width: 45%;
         }
     }
     & .avis{
@@ -434,14 +437,63 @@ body{
             transition: fill 0.3s cubic-bezier(0.14, 1.07, 0.66, 1); 
         }
     }
-    #Hex1, #Hex2, #Hex3, #Hex4, #Hex5, #Hex6{
+    #Hex1, #Hex2, #Hex3, #Hex4, #Hex5, #Hex6, #Hex1-2, #Hex2-2, #Hex3-2, #Hex4-2, #Hex5-2, #Hex6-2{
         transition: all 0.3s cubic-bezier(0.14, 1.07, 0.66, 1);
     }
-    #Btn{
+    #Btn, #Btn-2{
         cursor: pointer;
 
         text{
             user-select: none;
         }
+    }
+}
+
+// Page Experience
+
+.presentation{
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    &__form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 64px;
+
+        & .presentation__label--name{
+            margin-bottom: 8px;
+        }
+        & .presentation__input--name{
+            height: 16px;
+            padding: 8px 8px;
+            margin-bottom: 16px;
+            border-radius: 0%;
+            border: 1px solid $light-textcolor;
+        }
+        & .presentation__btn{
+            width: 100%;
+            height: 32px;
+            border-radius: 0%;
+            border: 1px solid $mid-yellow;
+            background: $mid-yellow-40;
+            font-family: 'Aspekta Variable';
+            font-weight: 400;
+        }
+    }
+}
+
+.classes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__h2{
+        font-size: 28px;
+        margin-top: 32px;
+    }
+    &__p{
+        font-size: 12px;
     }
 }
