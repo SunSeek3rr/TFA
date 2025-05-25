@@ -12,6 +12,10 @@ body{
     font-weight: 400;
     background-color: $light-bgcolor;
 }
+button{
+    cursor: pointer;
+}
+
 .h2{
     font-size: clamp(1.75rem, 1.158rem + 2.524vw, 4.188rem);
     margin: clamp(7rem, 5.301rem + 7.249vw, 14rem) 0 clamp(4rem, 3.029rem + 4.142vw, 8rem) 0;
@@ -81,6 +85,7 @@ body{
         top: 0;
         left: 0;
         z-index: 11;
+        color: $light-textcolor;
     }
     &__menu.menu-open{
         & .menu__list{
@@ -88,6 +93,7 @@ body{
         }
         & .menu__btn::before{
         content:"\2715";
+        color: $light-textcolor;
     }
 
     }
@@ -272,108 +278,6 @@ body{
 
 
 
-@media (min-width : 768px){
-    .main{
-    & .fonctionnement, .avis, .experience, ~ .footer{
-        padding: 0 64px;
-    }
-    .avis{
-        &__el{
-
-            & .el__nom{
-                font-size: 38px;
-            }
-            & .el__fonction{
-                font-size: 16px;
-            }
-            & .el__text{
-                font-size: 21px;
-            }
-        }
-        &__el::before{
-            width: 112px;
-            height: 112px;
-            left: -144px;
-        }
-    }
-        & .fonctionnement{
-        &__details{
-            & .details__el{
-                max-width: 48%;
-            }
-        }
-        }
-}
-}
-
-@media (min-width : 1440px){
-    .main{
-    & .fonctionnement, .avis, .experience{
-        padding: 0 128px;
-    }
-    & .fonctionnement{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        &__p{
-           margin-left: 64px; 
-        }
-        &__p:last-of-type{
-            max-width: 70ch;
-        }
-        &__details{
-            max-width: 50%;
-            height: fit-content;
-            padding-top: 64px;
-            & .details__div{
-                & .details__el{
-                    width: 50%;
-                }
-            }
-        }
-        &__visuel{
-            max-width: 45%;
-        }
-    }
-    & .avis{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        &__professeurs, &__eleves{
-            max-width: 50%;
-        }
-        &__el{
-            & .el__nom{
-                font-size: 51px;
-            }
-            & .el__fonction{
-                font-size: 21px;
-            }
-            & .el__text{
-                font-size: 21px;
-            }
-    }
-        &__el::before{
-            width: 112px;
-            height: 112px;
-            left: -144px;
-        }
-    }
-    ~ .footer{
-        padding: 0 512px;
-        & .footer__menu{
-            width: 45%;
-        }
-        & .footer__links{
-            justify-content: space-around;
-            width: 50%;
-            margin: 0 auto clamp(2rem, 1.515rem + 2.071vw, 4rem) auto;
-        }
-    }
-}
-}
-
 // SVG ANIM BTN
 
 .btn{
@@ -481,6 +385,7 @@ body{
             background: $mid-yellow-40;
             font-family: 'Aspekta Variable';
             font-weight: 400;
+            color: $light-textcolor;
         }
     }
 }
@@ -489,11 +394,291 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: none;
     &__h2{
         font-size: 28px;
         margin-top: 32px;
     }
     &__p{
         font-size: 12px;
+    }
+}
+.eleve{
+    display: flex;
+    padding: 0 16px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    &__h2{
+        font-size: 28px;
+        margin-top: 32px;
+        text-align: center;
+    }
+    &__p{
+        font-size: 12px;
+        max-width: 50ch;
+        text-align: center;
+    }
+    &__details{
+        & .eleve__h3{
+            font-weight: 400;
+            font-size: 28px;
+            margin: 32px 0 16px 0;
+        }
+        & .details__list{
+            width: 100%;
+            margin-bottom: 32px;
+        }
+        & .eleve__h4{
+            font-size: 21px;
+            font-weight: 400;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        & .eleve__h4:first-of-type{
+            border-bottom: .5px solid $light-bordercolor;
+        }
+        & .details__el{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid $mid-yellow;
+            padding: 8px 16px;
+        }
+        & .details__el:nth-of-type(1){
+            margin-bottom: 8px;
+        }
+    }
+    & .commentaire__el--read{
+        border: 1px solid $mid-yellow;
+        padding: 8px 16px;
+        margin-bottom: 32px;
+        & .el__text--time{
+            font-size: 12px;
+            margin-top: 8px;
+        }
+    }
+    &__commentaire--write{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        & .eleve__h4{
+            font-size: 21px;
+            font-weight: 400;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        & .commentaire__el--write{
+            border: 1px solid $mid-yellow;
+            background-color: $light-bgcolor;
+            min-height: 80px;
+            padding: 16px;
+        }
+        & .commentaire__btn{
+            width: 100%;
+            padding: 8px 0;
+            margin-top: 8px;
+            background-color: $mid-yellow-40;
+            border: 1px solid $mid-yellow;
+            font-size: 16px;
+            font-family: 'Aspekta Variable';
+            color: $light-textcolor;
+        }
+    }
+}
+.cours{
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--width{
+        display: flex;
+        flex-direction: column;
+    }
+    &__h3{
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 16px;
+        border-bottom: 1px solid $light-bordercolor;
+    }
+    &__h4{
+        font-size: 21px;
+        font-weight: 500;
+        color: $light-emcolor;
+        margin: 32px 0 16px 0;
+    }
+    &__p{
+        margin-bottom: 16px;
+    }
+    &__p:last-of-type{
+        margin-bottom: 0;
+    }
+    &__img{
+        width: 100%;
+        margin-top: 16px;
+    }
+    &__btn{
+        padding: 8px 0;
+        font-family: 'Aspekta Variable';
+        font-size: 16px;
+        border: 1px solid $mid-yellow;
+        background-color: $mid-yellow-40;
+        margin: 32px 0;
+        color: $light-textcolor;
+    }
+    .reponses{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &__el{
+            border: 1px solid $mid-yellow;
+            padding: 4px 8px;
+            margin: 32px 0px;
+            cursor: pointer;
+            & input{
+                display: none;
+            }
+            & label{
+                cursor: pointer;
+            }
+            &:has(input:checked){
+                background-color: $mid-yellow-40;
+            }
+        }
+        &__btn{
+            margin: 0px 0px 32px 0px;
+            padding: 8px 0;
+            border: 1px solid $mid-yellow;
+            background-color: $mid-yellow-40;
+            font-family: 'Aspekta Variable';
+            font-size: 16px;
+            color: $light-textcolor;
+        }
+    }
+}
+
+
+@media (min-width : 768px){
+    .main{
+    & .fonctionnement, .avis, .experience, ~ .footer{
+        padding: 0 64px;
+    }
+    .avis{
+        &__el{
+
+            & .el__nom{
+                font-size: 38px;
+            }
+            & .el__fonction{
+                font-size: 16px;
+            }
+            & .el__text{
+                font-size: 21px;
+            }
+        }
+        &__el::before{
+            width: 112px;
+            height: 112px;
+            left: -144px;
+        }
+    }
+        & .fonctionnement{
+        &__details{
+            & .details__el{
+                max-width: 48%;
+            }
+        }
+        }
+}
+    .eleve{
+        padding: 0 64px;
+                &__details{
+            width: 70%;
+        }
+    }
+    .cours{
+        padding: 0 64px;
+        &--width{
+            width: 70%;
+        }
+    }
+}
+
+@media (min-width : 1440px){
+    .main{
+    & .fonctionnement, .avis, .experience{
+        padding: 0 128px;
+    }
+    & .fonctionnement{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__p{
+           margin-left: 64px; 
+        }
+        &__p:last-of-type{
+            max-width: 70ch;
+        }
+        &__details{
+            max-width: 50%;
+            height: fit-content;
+            padding-top: 64px;
+            & .details__div{
+                & .details__el{
+                    width: 50%;
+                }
+            }
+        }
+        &__visuel{
+            max-width: 45%;
+        }
+    }
+    & .avis{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__professeurs, &__eleves{
+            max-width: 50%;
+        }
+        &__el{
+            & .el__nom{
+                font-size: 51px;
+            }
+            & .el__fonction{
+                font-size: 21px;
+            }
+            & .el__text{
+                font-size: 21px;
+            }
+    }
+        &__el::before{
+            width: 112px;
+            height: 112px;
+            left: -144px;
+        }
+    }
+    ~ .footer{
+        padding: 0 512px;
+        & .footer__menu{
+            width: 45%;
+        }
+        & .footer__links{
+            justify-content: space-around;
+            width: 50%;
+            margin: 0 auto clamp(2rem, 1.515rem + 2.071vw, 4rem) auto;
+        }
+    }
+}
+    .eleve{
+        padding: 0 128px;
+        &__details{
+            width: 30%;
+        }
+    }
+    .cours{
+        padding: 0 128px;
+        &--width{
+            width: 40%;
+        }
     }
 }
