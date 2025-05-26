@@ -360,7 +360,6 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: none;
     &__form{
         width: 100%;
         display: flex;
@@ -395,6 +394,7 @@ button{
     flex-direction: column;
     align-items: center;
     display: none;
+    padding: 0 16px;
     &__h2{
         font-size: 28px;
         margin-top: 32px;
@@ -402,7 +402,58 @@ button{
     &__p{
         font-size: 12px;
     }
+    &__svg{
+        width: 100%;
+        margin-top: 64px;
+        & svg{
+            width: 100%;
+            height: 100%;
+            & #classes__btn--id{
+                cursor: pointer;
+                &:hover{
+                    .hex--fill{
+                    fill-opacity: 1;
+                    transition: all .3s cubic-bezier(0.14, 1.07, 0.66, 1);
+                    }
+                }
+            }
+        }
+    }
 }
+
+.elevesListe{
+    padding: 0 16px;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__h2{
+        font-size: 28px;
+        margin-top: 32px;
+    }
+    &__p{
+        font-size: 12px;
+    }
+    &__svg{
+        width: 100%;
+        margin-top: 64px;
+        & svg{
+            width: 100%;
+            height: 100%;
+            & #elevesListe__btn--id{
+                cursor: pointer;
+                &:hover{
+                    .hex--fill{
+                    fill-opacity: 1;
+                    transition: all .3s cubic-bezier(0.14, 1.07, 0.66, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
 .eleve{
     display: flex;
     padding: 0 16px;
@@ -488,6 +539,7 @@ button{
 .cours{
     padding: 0 16px;
     display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     &--width{
@@ -528,6 +580,7 @@ button{
     .reponses{
         width: 100%;
         display: flex;
+        display: none;
         justify-content: space-between;
         &__el{
             border: 1px solid $mid-yellow;
@@ -589,6 +642,11 @@ button{
         }
         }
 }
+    .presentation{
+        &__form{
+            width: 70%;
+        }
+    }
     .eleve{
         padding: 0 64px;
                 &__details{
@@ -599,6 +657,12 @@ button{
         padding: 0 64px;
         &--width{
             width: 70%;
+        }
+    }
+    .classes, .elevesListe{
+        padding: 0 64px;
+        &__svg{
+            width: 80%;
         }
     }
 }
@@ -669,6 +733,11 @@ button{
         }
     }
 }
+    .presentation{
+        &__form{
+            width: 30%;
+        }
+    }
     .eleve{
         padding: 0 128px;
         &__details{
@@ -679,6 +748,12 @@ button{
         padding: 0 128px;
         &--width{
             width: 40%;
+        }
+    }
+    .classes, .elevesListe{
+        padding: 0 128px;
+        &__svg{
+            width: 30%;
         }
     }
 }
