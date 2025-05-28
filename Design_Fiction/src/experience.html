@@ -24,28 +24,27 @@
   <script src="scripts/app.js" defer></script>
 </head>
 <body>
-  <!-- Changer la nav pour 2 btns retour et terminer -->
-<!-- <header class="header">
 
-  <nav class="header__menu">
+<header class="header--experience">
+
+  <nav class="header__menu--experience">
     <ul class="menu__list">
-      <li class="menu__el"><button class="menu__btn--back"><- Retour</button></li>
-      <li class="menu__el"><button class="menu__btn--end">Terminer l'expérience</button></li>
+      <li class="menu__el"><button class="menu__btn--back">&larr; Retour</button></li>
+      <li class="menu__el"><button class="menu__btn--end btn__end">Terminer l'expérience</button></li>
     </ul>
   </nav>
 
-</header> -->
-
+</header>
+<h1 class="experience__h1">Expérience</h1>
 <section class="presentation">
   <form action="" class="presentation__form">
     <label class="presentation__label--name" for="Name">Comment vous appelez vous ?</label>
     <input class="presentation__input--name" type="text" name="Name" id="Name" placeholder="Sébastien">
-    <button type="button" class="presentation__btn">Valider</button>
+    <button type="submit" class="presentation__btn">Valider</button>
   </form>
 </section>
-
+<h2 class="experience__h2">Bonjour Sébastien !</h2>
 <section class="classes">
-  <h2 class="classes__h2">Bonjour Sébastien !</h2>
   <p class="classes__p">Vous pouvez consulter vos classes ci-dessous</p>
   
   <div class="classes__svg">
@@ -73,9 +72,8 @@
 
   </div>
 </section>
-<!-- UNE SEULE CLASSE POUR LES H2 ET NON CHAQUE CLASSE POUR CHAQUE H2 OU ALORS UN SEUL H2 EN DEHORS DES SECTIONS -->
+
 <section class="elevesListe">
-    <h2 class="elevesListe__h2">Bonjour Sébastien !</h2>
   <p class="elevesListe__p">Vous pouvez consulter la progression de vos élèves ci-dessous</p>
   <div class="elevesListe__svg">
     <svg width="509" height="537" viewBox="0 0 509 537" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +106,6 @@
 
 <section class="eleve">
 
-  <h2 class="eleve__h2">Bonjour Sébastien !</h2>
     <p class="eleve__p">Vous pouvez consulter la progression de votre élève ci-dessous et/ou modifier son parcours d'apprentissage</p>
     <form action="" class="eleve__details">
       <h3 class="eleve__h3">4TECH - Sacha <b class="lastName">Carnon</b></h3>
@@ -116,18 +113,37 @@
       <ul class="details__list">
         <li class="details__el">
           <p class="el__title">Technologies - 48%</p>
-          <button class="el__btn">Crayon</button>
+          <button type="button" class="el__btn el__btn--edit">
+            <svg width="41" height="36" viewBox="0 0 41 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>Editer</title>
+            <desc>Icone du bouton éditer</desc>
+            <g class="btn">
+              <path d="M30.4465 0.611137L40.2687 17.6238L30.4461 34.6378L10.801 34.637L0.978769 17.6243L10.8006 0.610796L30.4465 0.611137Z" fill="#FFBA0A" fill-opacity="0.4" stroke="#FFBA0A"/>
+              <path d="M12.75 22.8124V26.2499H16.1875L26.3258 16.1115L22.8883 12.674L12.75 22.8124ZM29.6258 12.8115L26.1883 9.37402L23.8692 11.7024L27.3067 15.1399L29.6258 12.8115Z" fill="#140F00"/>
+            </g>
+            </svg>
+          </button>
         </li>
               <li class="details__el">
           <p class="el__title">Ajouter un module</p>
-          <button class="el__btn">+</button>
+          <button type="button" class="el__btn"><img src="assets/images/Hex-classe/btn__add--grey.svg" alt="Icone du bouton pour ajouter"></button>
         </li>
       </ul>
       <h4 class="eleve__h4">Unité en cours :</h4>
       <ul class="details__list">
           <li class="details__el">
             <p class="el__title">Design Texte - 52%</p>
-            <button class="el__btn">-></button>
+            <button class="el__btn el__btn--redirect">
+              <svg width="41" height="36" viewBox="0 0 41 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>Redirection</title>
+              <desc>Icone du bouton redirection pour voir le cours</desc>
+              <g class="btn">
+                <path d="M30.4465 0.611137L40.2687 17.6238L30.4461 34.6378L10.801 34.637L0.978769 17.6243L10.8006 0.610796L30.4465 0.611137Z" fill="#FFBA0A" fill-opacity="0.4" stroke="#FFBA0A"/>
+                <path d="M24.877 15.6405L15.9675 24.55L14.7795 23.3621L23.6891 14.4525L14.6904 13.9476L16.2942 12.3439L26.4213 12.9082L26.9856 23.0354L25.3819 24.6391L24.877 15.6405Z" fill="#140F00"/>
+              </g>
+              </svg>
+
+            </button>
         </li>
       </ul>
       <div class="eleve__commentaire--read">
@@ -140,7 +156,7 @@
       <div class="eleve__commentaire--write">
         <h4 class="eleve__h4">Laisser un commentaire :</h4>
         <textarea class="commentaire__el--write" name="comment" id="comment"></textarea>
-        <button class="commentaire__btn">Envoyer</button>
+        <button type="button" class="commentaire__btn">Envoyer</button>
       </div>
     </form>
 
@@ -149,7 +165,7 @@
 
 </section>
 
-<section class="cours">
+<section class="cours cours--cours">
   <div class="cours--width">
     <h3 class="cours__h3">Design Texte - Les&nbsp;couleurs&nbsp;de&nbsp;texte</h3>
     <article class="cours__intro">
@@ -201,23 +217,23 @@
         <article class="cours__taille">
       <h4 class="cours__h4">Question n°1 : Taille de police</h4>
       <p class="cours__p">Quelle est la taille de police de base si le texte principal est défini à 18px ?</p>
-        <form action="" class="reponses">
-          <div class="reponses__el">
+        <form action="" class="reponses reponses--taille">
+          <div class="reponses__el taille__input">
             <input type="radio" name="taille" id="taille--A" value="A">
             <label for="taille--A">A. 12px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el taille__input">
             <input type="radio" name="taille" id="taille--B" value="B">
             <label for="taille--B">B. 18px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el taille__input">
             <input type="radio" name="taille" id="taille--C" value="C">
             <label for="taille--C">C. 20px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el taille__input">
             <input type="radio" name="taille" id="taille--D" value="D">
             <label for="taille--D">D. 16px</label>
           </div>
@@ -227,23 +243,23 @@
     <article class="cours__espacement">
       <h4 class="cours__h4">Question n°2 : Espacement</h4>
       <p class="cours__p">Si la taille de police est de 18px et l’espacement de 1.6 (160%), quelle sera la distance entre les lignes de texte ?</p>
-        <form action="" class="reponses">
-          <div class="reponses__el">
+        <form action="" class="reponses reponses--espacement">
+          <div class="reponses__el espacement__input">
             <input type="radio" name="espacement" id="espacement--A" value="A">
             <label for="espacement--A">A. 29px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el espacement__input">
             <input type="radio" name="espacement" id="espacement--B" value="B">
             <label for="espacement--B">B. 18px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el espacement__input">
             <input type="radio" name="espacement" id="espacement--C" value="C">
             <label for="espacement--C">C. 22px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el espacement__input">
             <input type="radio" name="espacement" id="espacement--D" value="D">
             <label for="espacement--D">D. 32px</label>
           </div>
@@ -253,23 +269,23 @@
     <article class="cours__rapport">
       <h4 class="cours__h4">Question n°3 : Rapport hiérarchique</h4>
       <p class="cours__p">Si la taille de base du texte est de 18px et le rapport hiérarchique est de 1.3, quelle sera la taille du niveau hiérarchique supérieur ?</p>
-        <form action="" class="reponses">
-          <div class="reponses__el">
+        <form action="" class="reponses reponses--rapport">
+          <div class="reponses__el rapport__input">
             <input type="radio" name="rapport" id="rapport--A" value="A">
             <label for="rapport--A">A. 25px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el rapport__input">
             <input type="radio" name="rapport" id="rapport--B" value="B">
             <label for="rapport--B">B. 19px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el rapport__input">
             <input type="radio" name="rapport" id="rapport--C" value="C">
             <label for="rapport--C">C. 23px</label>
           </div>
 
-          <div class="reponses__el">
+          <div class="reponses__el rapport__input">
             <input type="radio" name="rapport" id="rapport--D" value="D">
             <label for="rapport--D">D. 29px</label>
           </div>
@@ -277,11 +293,12 @@
       </form>
     </article>
     <button type="button" class="reponses__btn">Voir les résultats</button>
+    <button type="button" class="reponses__btn--end btn__end">Terminer l'expérience</button>
   </div>
 </section>
 <!-- Changer span>li pour li>span-->
 
-<!-- <footer class="footer">
+<footer class="footer footer--experience">
   <h3 class="footer__title h3">Hex-IA</h3>
     <ul class="footer__menu">
       <span class="menu__div">
@@ -294,11 +311,11 @@
       </span>
     </ul>
     <div class="footer__links">
-      <a href="" class="links__el">Conditions d'utilisations</a>
-      <a href="" class="links__el">Jobs</a>
-      <a href="" class="links__el">Contact</a>
+      <a href="javascript:void(0)" class="links__el">Conditions d'utilisations</a>
+      <a href="javascript:void(0)" class="links__el">Jobs</a>
+      <a href="javascript:void(0)" class="links__el">Contact</a>
     </div>
-</footer> -->
+</footer>
 
 </body>
 </html>

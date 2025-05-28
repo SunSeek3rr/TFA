@@ -15,6 +15,9 @@ body{
 button{
     cursor: pointer;
 }
+button:hover{
+    transition: all .3s cubic-bezier(0.14, 1.07, 0.66, 1)
+}
 
 .h2{
     font-size: clamp(1.75rem, 1.158rem + 2.524vw, 4.188rem);
@@ -23,7 +26,6 @@ button{
     width: 100%;
     font-weight: 600;
 }
-
 .header{
     position: fixed;
     top: 0;
@@ -32,10 +34,10 @@ button{
     z-index: 10;
     &__menu{
         font-size: 21px;
-        height: clamp(2.5rem, 2.136rem + 1.553dvw, 4rem);
-        padding: clamp(0.5rem, 0.136rem + 1.553dvw, 2rem) clamp(1rem, -0.699rem + 7.249dvw, 8rem);
+        padding: clamp(0.5rem, 0.379rem + 0.518vw, 1rem) clamp(1rem, -0.699rem + 7.249dvw, 8rem);
         display: flex;
         justify-content: space-between;
+        align-items: center;
         background-color: $light-bgcolor;
     }
     & .menu__list{
@@ -78,14 +80,14 @@ button{
     }
     & .menu__btn::before{
         content:"\2630";
-        width: 40px;
-        height: 40px;
-        display: inline-block;
+        width: 100%;
+        height: 100%;
+        display: block;
+        color: $light-textcolor;
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         z-index: 11;
-        color: $light-textcolor;
     }
     &__menu.menu-open{
         & .menu__list{
@@ -96,6 +98,40 @@ button{
         color: $light-textcolor;
     }
 
+    }
+    &--experience{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background-color: $light-bgcolor;
+        & .header__menu--experience{
+            padding: 8px 16px;
+        }
+        & .menu__list{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & .menu__btn--back, & .menu__btn--end{
+                font-size: 16px;
+                font-family: 'Aspekta Variable';
+                color: $light-textcolor;
+            }
+            & .menu__btn--back{
+                border: none;
+                background-color: transparent;
+                visibility: hidden;
+            }
+            & .menu__btn--end{
+                background-color: $mid-yellow-40;
+                border: 1px solid $mid-yellow;
+                padding: 8px;
+                &:hover{
+                    background-color: $mid-yellow;
+                }
+            }
+        }
     }
 }
 
@@ -108,18 +144,20 @@ button{
     min-height: calc(100vh + clamp(3.5rem, 0.951rem + 10.874vw, 14rem));
     line-height: 140%;
     &__title{
-        margin-top: clamp(6rem, 5.029rem + 4.142vw, 10rem);
+        margin-top: clamp(5rem, 4.272rem + 3.107vw, 8rem);
         & .title__h1{
             font-size: clamp(5.625rem, 4.563rem + 4.531vw, 10rem);
             line-height: 100%;
             text-align: center;
             font-weight: 500;
+            overflow: hidden;
         }
         & .title__p{
             text-align: center;
-            line-height: 100%;
+            line-height: 120%;
             font-size: clamp(1rem, 0.818rem + 0.777vw, 1.75rem);
             font-weight: 500;
+            overflow: hidden;
         }
     }
     &__deco{
@@ -129,6 +167,8 @@ button{
         top: clamp(3.5rem, 0.951rem + 10.874vw, 14rem);
         left: 0;
         z-index: -1;
+        opacity: 0;
+        animation: decoSvg 0.3s linear 0.3s forwards;
         & img{
             width: 100vw;
         }
@@ -225,16 +265,22 @@ button{
     }
 
     .experience{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         &__ctaText{
             display: flex;
             flex-direction: column;
             align-items: center;
             font-size: clamp(1.313rem, 0.857rem + 1.942vw, 3.188rem);
-            margin-bottom: clamp(4rem, 3.029rem + 4.142vw, 8rem);
             line-height: 120%;
             & .h3__span:last-of-type{
                 color: $light-emcolor;
             }
+        }
+        & .btn{
+            margin: 32px 0;
+            width: 98%;
         }
     }
 }
@@ -274,6 +320,9 @@ button{
             color: $light-textcolor;
         }
     }
+    &--experience{
+        padding: 0 clamp(1rem, -6.524rem + 32.104vw, 32rem);
+    }
 }
 
 
@@ -282,7 +331,7 @@ button{
 
 .btn{
     margin-top: 32px;
-    width: 28%;
+    width: 90%;
     height: auto;
     border: none;
     background-color: transparent;
@@ -355,8 +404,22 @@ button{
 
 // Page Experience
 
+.experience{
+    &__h1{
+        visibility: hidden;
+        height: 0;
+    }
+    &__h2{
+        text-align: center;
+        font-size: 28px;
+        margin-top: 32px;
+        display: none;
+    }
+}
+
 .presentation{
     padding: 0 16px;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -385,6 +448,9 @@ button{
             font-family: 'Aspekta Variable';
             font-weight: 400;
             color: $light-textcolor;
+            &:hover{
+                background-color: $mid-yellow;
+            }
         }
     }
 }
@@ -395,10 +461,6 @@ button{
     align-items: center;
     display: none;
     padding: 0 16px;
-    &__h2{
-        font-size: 28px;
-        margin-top: 32px;
-    }
     &__p{
         font-size: 12px;
     }
@@ -428,10 +490,6 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    &__h2{
-        font-size: 28px;
-        margin-top: 32px;
-    }
     &__p{
         font-size: 12px;
     }
@@ -460,11 +518,7 @@ button{
     display: none;
     flex-direction: column;
     align-items: center;
-    &__h2{
-        font-size: 28px;
-        margin-top: 32px;
-        text-align: center;
-    }
+    margin-bottom: 10%;
     &__p{
         font-size: 12px;
         max-width: 50ch;
@@ -492,11 +546,30 @@ button{
         & .details__el{
             display: flex;
             justify-content: space-between;
+            align-items: center;
             border: 1px solid $mid-yellow;
             padding: 8px 16px;
+            & .el__btn{
+                border: none;
+                background: transparent;
+                pointer-events: auto;
+                &:hover{
+                    .btn>path:first-of-type{
+                        fill-opacity: 1;
+                        transition: all .3s cubic-bezier(0.14, 1.07, 0.66, 1);
+                    }
+                }
+                & svg , & svg *{
+                    pointer-events: none;
+                }
+            }
         }
         & .details__el:nth-of-type(1){
             margin-bottom: 8px;
+        }
+        & .details__el:nth-of-type(2){
+            background-color: $grey-20;
+            border-color: $grey-70;
         }
     }
     & .commentaire__el--read{
@@ -528,8 +601,8 @@ button{
             width: 100%;
             padding: 8px 0;
             margin-top: 8px;
-            background-color: $mid-yellow-40;
-            border: 1px solid $mid-yellow;
+            background-color: $grey-20;
+            border: 1px solid $grey-70;
             font-size: 16px;
             font-family: 'Aspekta Variable';
             color: $light-textcolor;
@@ -538,13 +611,17 @@ button{
 }
 .cours{
     padding: 0 16px;
-    display: flex;
     display: none;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $light-bgcolor;
     &--width{
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
     &__h3{
         font-size: 28px;
@@ -576,11 +653,14 @@ button{
         background-color: $mid-yellow-40;
         margin: 32px 0;
         color: $light-textcolor;
+        &:hover{
+            background-color: $mid-yellow;
+            
+        }
     }
     .reponses{
         width: 100%;
         display: flex;
-        display: none;
         justify-content: space-between;
         &__el{
             border: 1px solid $mid-yellow;
@@ -595,9 +675,25 @@ button{
             }
             &:has(input:checked){
                 background-color: $mid-yellow-40;
+                &.false{
+                    background-color: rgba(255, 10, 10, 0.4);
+                    border: 1px solid #FF0A0A;
+                }
+                &.true{
+                    background-color: rgba(6, 97, 0, 0.4);
+                    border: 1px solid #066100;
+            }
+            }
+            &.false{
+            background-color: rgba(255, 10, 10, 0.4);
+            border: 1px solid #FF0A0A;
+            }
+            &.true{
+                background-color: rgba(6, 97, 0, 0.4);
+                border: 1px solid #066100;
             }
         }
-        &__btn{
+        &__btn, &__btn--end{
             margin: 0px 0px 32px 0px;
             padding: 8px 0;
             border: 1px solid $mid-yellow;
@@ -605,8 +701,22 @@ button{
             font-family: 'Aspekta Variable';
             font-size: 16px;
             color: $light-textcolor;
+            &:hover{
+                background-color: $mid-yellow;
+            }
+        }
+        &__btn--end{
+            display: none;
         }
     }
+}
+
+.selectModule, .cours, .experience__h2{
+    padding-top: 64px;
+}
+
+.displayed{
+    display: flex;
 }
 
 
@@ -641,6 +751,14 @@ button{
             }
         }
         }
+        .btn{
+        width: 70%;
+    }
+        .experience{
+            .btn{
+                width: 84%;
+        }
+    }
 }
     .presentation{
         &__form{
@@ -654,7 +772,9 @@ button{
         }
     }
     .cours{
-        padding: 0 64px;
+        width: 100%;
+        padding: 0;
+        padding-top: 64px;
         &--width{
             width: 70%;
         }
@@ -665,6 +785,7 @@ button{
             width: 80%;
         }
     }
+    
 }
 
 @media (min-width : 1440px){
@@ -714,14 +835,24 @@ button{
             & .el__text{
                 font-size: 21px;
             }
-    }
+        }
         &__el::before{
             width: 112px;
             height: 112px;
             left: -144px;
         }
     }
-    ~ .footer{
+    
+    .btn{
+        width: 28%;
+    }
+    .experience{
+        .btn{
+            width: 35%;
+        }
+    }
+}
+.footer{
         padding: 0 512px;
         & .footer__menu{
             width: 45%;
@@ -732,28 +863,34 @@ button{
             margin: 0 auto clamp(2rem, 1.515rem + 2.071vw, 4rem) auto;
         }
     }
+.presentation{
+    &__form{
+        width: 30%;
+    }
 }
-    .presentation{
-        &__form{
-            width: 30%;
-        }
+.eleve{
+    padding: 0 128px;
+    &__details{
+        width: 30%;
     }
-    .eleve{
-        padding: 0 128px;
-        &__details{
-            width: 30%;
-        }
+}
+.cours{
+    &--width{
+        width: 35%;
     }
-    .cours{
-        padding: 0 128px;
-        &--width{
-            width: 40%;
-        }
+}
+.classes, .elevesListe{
+    padding: 0 128px;
+    &__svg{
+        width: 30%;
     }
-    .classes, .elevesListe{
-        padding: 0 128px;
-        &__svg{
-            width: 30%;
-        }
+}
+}
+
+@keyframes decoSvg {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
     }
 }
