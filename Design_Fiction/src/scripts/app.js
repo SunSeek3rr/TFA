@@ -879,10 +879,10 @@ let sectionExercice = document.querySelector(".cours--exercice");
 formPresentation.addEventListener("submit", (e)=>{
     e.preventDefault();
     let nameInput = document.querySelector(".presentation__input--name");
-    let hello = document.querySelector(".experience__h2");
-    hello.innerText = `Bonjour ${nameInput.value} !`;
+    let helloTitle = document.querySelector(".experience__h2");
+    helloTitle.innerText = `Bonjour ${nameInput.value} !`;
     document.querySelector(".presentation").style.display = "none";
-    hello.style.display = "block";
+    helloTitle.style.display = "block";
     sectionClasses.style.display = "flex";
 });
 
@@ -905,7 +905,6 @@ elevesListeBtn.addEventListener("click", ()=>{
 let editBtn = document.querySelector(".el__btn--edit");
 let redirectBtn = document.querySelector(".el__btn--redirect");
 let formEleveDetails = document.querySelector(".eleve__details");
-
 document.querySelector(".el__btn svg path").addEventListener("click", (e)=>{
     e.stopPropagation();
     e.target.closest("button").click();
@@ -925,7 +924,14 @@ redirectBtn.addEventListener("click", ()=>{
     btnBack.style.visibility = "visible";
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
+// Experience selectModule btn
+let selectModuleBtn = document.querySelector(".selectModule__btn--svg");
+selectModuleBtn.addEventListener("click", ()=>{
+    document.querySelector(".details__el:first-of-type .el__title").innerText = "Design et multimédia - 63%";
+    sectionSelectModule.classList.remove("displayed");
+    btnBack.style.visibility= "hidden";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
 // Experience cours--cours btn
 
 let coursBtn = document.querySelector(".cours__btn");

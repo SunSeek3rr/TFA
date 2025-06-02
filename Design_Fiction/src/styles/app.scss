@@ -331,6 +331,7 @@ button:hover{
     }
     &--experience{
         padding: 0 clamp(1rem, -6.524rem + 32.104vw, 32rem);
+        margin-top: 96px;
     }
 }
 
@@ -344,7 +345,7 @@ button:hover{
     height: auto;
     border: none;
     background-color: transparent;
-    
+    cursor: default;
     .cls-1 {
     stroke-miterlimit: 4;
     stroke-width: 1px;
@@ -428,10 +429,11 @@ button:hover{
 
 .presentation{
     padding: 0 16px;
-    min-height: 70vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 64px;
     &__form{
         width: 100%;
         display: flex;
@@ -465,7 +467,6 @@ button:hover{
 }
 
 .classes{
-    display: flex;
     flex-direction: column;
     align-items: center;
     display: none;
@@ -494,7 +495,6 @@ button:hover{
 
 .elevesListe{
     padding: 0 16px;
-    display: flex;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -522,7 +522,6 @@ button:hover{
 }
 
 .eleve{
-    display: flex;
     padding: 0 16px;
     display: none;
     flex-direction: column;
@@ -618,6 +617,49 @@ button:hover{
         }
     }
 }
+.selectModule{
+    padding: 0 16px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $light-bgcolor;
+    height: 100%;
+    &__h3{
+        text-align: center;
+        font-size: clamp(1.313rem, 1.055rem + 1.1vw, 2.375rem);
+        font-weight: 400;
+        margin-top: 16px;
+    }
+    &--padding{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    &__btn{
+        border: none;
+        background-color: transparent;
+        cursor: default;
+        width: 35%;
+        margin-top: 32px;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+        &--svg{
+        &:hover{
+            cursor: pointer;
+            & > path{
+                fill-opacity: 1;
+            }
+            
+        }
+    }
+    }
+}
 .cours{
     padding: 0 16px;
     display: none;
@@ -627,7 +669,7 @@ button:hover{
     top: 0;
     left: 0;
     background-color: $light-bgcolor;
-    &--width{
+    &--padding{
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -719,9 +761,14 @@ button:hover{
         }
     }
 }
-
+.classes, .elevesListe, .presentation{
+    margin-bottom: 256px;
+}
 .selectModule, .cours, .experience__h2{
     padding-top: 64px;
+}
+.section__h2--hidden{
+    display: none;
 }
 
 .displayed{
@@ -776,15 +823,15 @@ button:hover{
     }
     .eleve{
         padding: 0 64px;
-                &__details{
+        &__details{
             width: 70%;
         }
     }
-    .cours{
+    .cours, .selectModule{
         width: 100%;
         padding: 0;
         padding-top: 64px;
-        &--width{
+        &--padding{
             width: 70%;
         }
     }
@@ -883,11 +930,19 @@ button:hover{
         width: 30%;
     }
 }
-.cours{
-    &--width{
+.cours, .selectModule{
+    &--padding{
         width: 35%;
     }
 }
+    .selectModule{
+        &__btn{
+            width: 20%;
+        }
+        &--padding{
+            width: 45%;
+        }
+    }
 .classes, .elevesListe{
     padding: 0 128px;
     &__svg{
