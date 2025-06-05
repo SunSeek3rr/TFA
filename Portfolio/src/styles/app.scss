@@ -3,7 +3,9 @@
 @import 'utils/reset';
 @import 'utils/mixins';
 
-
+html, body{
+        scroll-behavior: smooth;
+}
 body{
     font-family: "Host Grotesk", sans-serif;
     font-optical-sizing: auto;
@@ -11,6 +13,9 @@ body{
     font-style: normal;
     background-color: $bg-color;
     color: $white;
+}
+#Projets, #Apropos, #Contact{
+    scroll-margin-top: 60px;
 }
 .p{
     line-height: 130%;
@@ -46,7 +51,6 @@ body{
         &__el{
             padding: margin-to-rem(12) margin-to-rem(8);
             border-bottom: 1px solid $orange;
-            width: 75dvw;
             position: relative;
             margin-bottom: clamp(1rem, 0.272rem + 3.107vw, 4rem);
             &:hover{
@@ -70,12 +74,14 @@ body{
                 color: $white;
                 font-size: clamp(1.75rem, 1.401rem + 1.489vw, 3.188rem);
                 font-weight: 300;
+                width: 75dvw;
+                display: block;
             }
         }
         &__btn{
-            width: 30px;
+            width: 40px;
             height: 50px;
-            font-size: 36px;
+            font-size: 42px;
             position: relative;
             background-color: transparent;
             border: none;
@@ -93,6 +99,7 @@ body{
         }
         &.menu--open{
             & .menu__btn::before{
+                font-size: 42px;
                 content:"\2715";
             }
             & .menu__list{
@@ -143,7 +150,7 @@ body{
         }
         &--column1{
             width: clamp(10.688rem, 4.366rem + 26.972vw, 17.313rem);
-            height: 70.315dvh;
+            height: 70.315vh;
             border-radius: 64px 0 0 0;
             margin: 0 clamp(1rem, 0.272rem + 3.107vw, 4rem);
             background-image: url("../assets/images/landing--photo.jpg");
@@ -155,6 +162,7 @@ body{
             flex-direction: column;
             gap: margin-to-rem(32);
             position: relative;
+            // padding: 0 16px 0 0;
         }
         &--sun{
             width: clamp(9.375rem, 3.411rem + 25.445vw, 15.625rem);
@@ -181,10 +189,10 @@ body{
             .menu__el{
                 padding: margin-to-rem(12) margin-to-rem(8);
                 border-bottom: 1px solid $orange;
-                width: 46.67dvw;
                 position: relative;
                 margin-bottom: clamp(1rem, 0.272rem + 3.107vw, 4rem);
                 z-index: 1;
+                width: 46.67dvw;
                 &:hover{
                     > .menu__el--link{
                         color: $bg-color;
@@ -206,6 +214,8 @@ body{
                     color: $white;
                     font-size: clamp(1.75rem, 1.401rem + 1.489vw, 3.188rem);
                     font-weight: 300;
+                    width: 100%;
+                    display: block;
                 }
             }
         }
@@ -220,7 +230,7 @@ body{
         border-bottom: 1px solid $orange;
         font-weight: 300;
     }
-    &--projets{
+    &--projets, &--caseStudy{
         .projets--container{
             .projets__el{
                 display: flex;
@@ -231,7 +241,7 @@ body{
                     width: 100%;
                     height: clamp(10.688rem, 1.146rem + 19.878vw, 25rem);
                     background-size: cover;
-                    background-position: 0% 0%;
+                    background-position: 0% center;
                     .el__img{
                         width: 100%;
                         height: 100%;
@@ -296,28 +306,100 @@ body{
                 font-size: clamp(1rem, 0.792rem + 0.434vw, 1.313rem);
                 padding: 0 clamp(1rem, 0.272rem + 3.107vw, 4rem);
                 margin-bottom: clamp(2rem, 0.667rem + 2.778vw, 4rem);
-                min-height: 12%;
+                min-height: 25%;
             }
         }
     }
     &--contact{
         display: flex;
         flex-direction: column;
-        .section__btn{
-            border: 1px solid $orange;
-            padding: margin-to-rem(8) margin-to-rem(16);
-            color: $white;
-            transition: all 0.3s ease-out;
-            background-color: $bg-color;
-            font-family: "Host Grotesk", sans-serif;
-            font-size: 21px;
-            &:hover{
-                color: $bg-color;
-                background-color: $orange;
+    }
+    &--caseStudy{
+        overflow-y: auto;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        background-color: $bg-color;
+        margin: 0;
+        padding-bottom: margin-to-rem(128);
+        &.open{
+            display: flex;
+        }
+        .section__div--wrapper{
+            align-items: flex-end;
+        }
+        .section{
+            &__h2, &__h3{
+                font-weight: 500;
+                width: 100%;
             }
-            &--contact{
-                align-self: center;
-                margin-top: margin-to-rem(64);
+            &__h2{
+                font-size: clamp(2.375rem, 1.935rem + 1.877vw, 4.188rem);
+            }
+            &__h3{
+                font-size: clamp(1.75rem, 1.401rem + 1.489vw, 3.188rem);
+                margin: clamp(4rem, 2.092rem + 8.142vw, 6rem) 0 0 0;
+            }
+            &__header{
+                height: 60px;
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                position: fixed;
+                top: 0;
+                background-color: $bg-color;
+                .header__btn{
+                    width: 30px;
+                    height: 50px;
+                    font-size: 42px;
+                    position: relative;
+                    background-color: transparent;
+                    border: none;
+                        &::before{
+                        content:"\2715";
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        color: $white;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 99;
+                        padding-right: clamp(1rem, 0.272rem + 3.107vw, 4rem);
+                    }
+                }
+            }
+            &__div{
+                &--img{
+                    width: 100%;
+                    height: 25vh;
+                    background-size: cover;
+                    background-position: 0% 50%;
+                }
+                &--imgJanus{
+                    background-image: url("../assets/images/Janus--photo.jpg");
+                }
+                &--imgDataplay{
+                    background-image: url("../assets/images/Dataplay--photo.jpg");
+                }
+                &--imgRux{
+                    background-image: url("../assets/images/RUX--photo.jpg");
+                }
+                &--imgDF{
+                    background-image: url("../assets/images/DF--photo.jpg");
+                }
+            }
+            &__btn{
+                margin: clamp(2rem, 1.515rem + 2.071vw, 4rem) 0;
+                &:last-of-type{
+                    margin-bottom: margin-to-rem(96);
+                }
+            }
+            &__p{
+                &:first-of-type{
+                    margin-top: margin-to-rem(32);
+                }
             }
         }
     }
@@ -335,7 +417,7 @@ body{
         margin-top: clamp(4rem, 2.058rem + 8.285vw, 12rem);
     }
     &__h3{
-        margin: margin-to-rem(32) 0;
+        margin: clamp(2rem, 1.515rem + 2.071vw, 4rem) 0;
         font-size: 21px;
         font-weight: 300;
     }
@@ -348,6 +430,32 @@ body{
                 width: 14%;
             }
         }
+        &--wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__btn{
+        border: 1px solid $orange;
+        padding: margin-to-rem(8) margin-to-rem(16);
+        color: $white;
+        transition: all 0.3s ease-out;
+        background-color: $bg-color;
+        font-family: "Host Grotesk", sans-serif;
+        text-decoration: none;
+        font-size: 21px;
+        &:hover{
+            color: $bg-color;
+            background-color: $orange;
+            img{
+                filter: brightness(0) saturate(100%) invert(4%) sepia(58%) saturate(2886%) hue-rotate(214deg) brightness(94%) contrast(106%);
+            }
+            }
+        &--contact{
+            align-self: center;
+            margin-top: margin-to-rem(64);
+            }
     }
 
 }
@@ -421,6 +529,9 @@ body{
             &--column1{
                 margin: 0 clamp(2rem, -1rem + 6.25vw, 3rem);
             }
+            &--column2{
+                max-width: 50%;
+            }
         }
         &__h1{
             font-size: clamp(7.5rem, 5.833rem + 3.472vw, 10rem);
@@ -440,7 +551,7 @@ body{
     }
     }
     .section{
-        &--projets{
+        &--projets, &--caseStudy{
             .projets{
                 &--container{
                         display: flex;
@@ -458,6 +569,13 @@ body{
                         }
                 }
 
+            }
+        }
+        &--caseStudy{
+            .section{
+                &__h3{
+                    margin: clamp(6rem, 4.667rem + 2.778vw, 8rem) 0 0 0;
+                }
             }
         }
     }
@@ -483,6 +601,7 @@ body{
                     height: 100%;
                     position: absolute;
                     top: 8px;
+                    margin-left: margin-to-rem(8);
                 }
             }
             &--content{
@@ -492,7 +611,7 @@ body{
                 display: none;
             }
             &--column2{
-                width: 100%;
+                min-width: 100%;
             }
             &--sun{
                 display: none;
@@ -518,6 +637,13 @@ body{
         }
     }
     .section{
+        &--projets{
+            .projets--container{
+                .projets__p{
+                    min-height: 12%;
+                }
+            }
+        }
         &--Apropos{
             display: flex;
             flex-direction: column;
@@ -538,6 +664,21 @@ body{
         }
         &__h2{
             width: 100%;
+        }
+        &--caseStudy{
+            .section{
+                &__div{
+                    &--img{
+                        height: 40vh;
+                    }
+                }
+            }
+            .projets--container{
+                .projets__el{
+                    width: 100%;
+                    max-width: none;
+                }
+            }
         }
     }
     .footer{
