@@ -2,6 +2,7 @@
 import gsap from "gsap/src";
 
 // Header nav
+
 let headerNav = document.querySelector(".header");
 let menuBtn = document.querySelector(".menu__btn");
 menuBtn.addEventListener("click", ()=>{
@@ -88,7 +89,8 @@ if(isDesktop()){
         });
     });
     
-    // Ajouter une classe au survol des liens et boutons
+    // Changer l'état hover du curseur
+
     document.querySelectorAll("a, button, li, li::after").forEach((element) => {
       element.addEventListener("mouseenter", () => {
         gsap.to(".customCursor", { width: "80px", height: "80px", border: "2px solid #FFFBF5", duration: 0.2 });

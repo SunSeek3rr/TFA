@@ -177,7 +177,6 @@ body{
             flex-direction: column;
             gap: margin-to-rem(32);
             position: relative;
-            // padding: 0 16px 0 0;
         }
         &--sun{
             width: clamp(9.375rem, 3.411rem + 25.445vw, 15.625rem);
