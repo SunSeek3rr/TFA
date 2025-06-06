@@ -417,6 +417,34 @@ body{
             }
         }
     }
+    &--credits{
+        margin-top: margin-to-rem(64);
+        .section__div--wrapper{
+            align-items: normal;
+        }
+        .credits__h3{
+            font-size: 38px;
+            padding: 0 clamp(1rem, 0.272rem + 3.107vw, 4rem);
+            margin: clamp(1rem, 0.272rem + 3.107vw, 4rem) 0  clamp(1.5rem, 1.167rem + 0.694vw, 2rem) 0;
+            &--link{
+                color: $white;
+                font-weight: 500;
+                line-height: 130%;
+                position: relative;
+                transition: all 0.3s ease-out;
+                    &:hover{
+                        color: $orange;
+                        }
+                    &::after{
+                        content: url("../assets/images/Arrow--link.svg");
+                        width: fit-content;
+                        position: absolute;
+                        top: -1px;
+                        right: margin-to-rem(-33);
+                        }
+                    }
+                }
+    }
     &__p{
         font-family: "latienne-pro", serif;
         margin-top: margin-to-rem(32);
