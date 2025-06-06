@@ -4,7 +4,8 @@ import CustomEase from "gsap/CustomEase";
 import SplitText from "gsap/SplitText";
 gsap.registerPlugin(CustomEase, SplitText);
 
-if (window.location.pathname === "/index.html" || window.location.pathname === "/" ) {
+
+if (window.location.pathname === "/projets/tfa/design_fiction/index.html" || window.location.pathname === "/projets/tfa/design_fiction/" ) {
         
         //Menu
 
@@ -23,7 +24,6 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
         // Changer l'image déco de la section accueil en fonction du device
         
         let width = window.innerWidth;
-        console.log(width);
         if (width >= 1440){
         
             let deco = document.querySelector(".accueil__deco img");
@@ -90,7 +90,6 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
         let Btn2 = document.querySelector("#Btn-2");
 
         Btn.addEventListener("mouseenter", ()=>{
-            console.log("enter");
 
             Hex1.style.transform = "translate(-32px, -50px)";
             Hex2.style.transform = "translate(32px, -50px)";
@@ -281,7 +280,7 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
 
 
         Btn.addEventListener("mouseleave", ()=>{
-            console.log("leave");
+
             Hex1.style.transform = "translate(0px, 0px)";
             Hex2.style.transform = "translate(0px, 0px)";
             Hex3.style.transform = "translateX(0px)";
@@ -467,7 +466,6 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
         });
 
         Btn2.addEventListener("mouseenter", ()=>{
-            console.log("enter");
 
             Hex12.style.transform = "translate(-32px, -50px)";
             Hex22.style.transform = "translate(32px, -50px)";
@@ -658,7 +656,6 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
 
 
         Btn2.addEventListener("mouseleave", ()=>{
-            console.log("leave");
             Hex12.style.transform = "translate(0px, 0px)";
             Hex22.style.transform = "translate(0px, 0px)";
             Hex32.style.transform = "translateX(0px)";
@@ -848,7 +845,7 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
         Btn2.addEventListener("click", ()=>{
             window.location.href = "experience.html";
         });
-    } else if(window.location.pathname === "/experience.html"){
+    } else if(window.location.pathname === "/projets/tfa/design_fiction/experience.html"){
         // Experience
 // Experience Back btn
 let btnBack = document.querySelector(".menu__btn--back");
