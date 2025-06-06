@@ -1,3 +1,6 @@
+"use strict";
+import gsap from "gsap/src";
+
 // Header nav
 let headerNav = document.querySelector(".header");
 let menuBtn = document.querySelector(".menu__btn");
@@ -62,4 +65,37 @@ closeBtn.forEach((item)=>{
     });
 });
 
+// custom cursor
 
+
+gsap.set(".customCursor", { xPercent: -50, yPercent: -50});
+
+function isDesktop (){
+    return !/Mobi|Android|iPhone|iPad|Tablet/i.test(navigator.userAgent);
+}
+document.addEventListener("DOMContentLoaded", isDesktop);
+if(isDesktop()){
+    document.addEventListener("mousemove", (e) => {
+        let cursor = document.querySelector(".customCursor");
+        if(cursor.style.opacity == 0){
+            cursor.style.opacity = 1;
+        }
+        gsap.to(".customCursor",{
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.2,
+            ease: "power2.out"
+        });
+    });
+    
+    // Ajouter une classe au survol des liens et boutons
+    document.querySelectorAll("a, button, li, li::after").forEach((element) => {
+      element.addEventListener("mouseenter", () => {
+        gsap.to(".customCursor", { width: "80px", height: "80px", border: "2px solid #FFFBF5", duration: 0.2 });
+      });
+      element.addEventListener("mouseleave", () => {
+        gsap.to(".customCursor", { width: "20px", height: "20px", border: "1px solid #FB6B37", duration: 0.2 });
+      });
+    });
+
+}

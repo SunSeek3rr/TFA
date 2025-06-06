@@ -2,7 +2,9 @@
 @import 'components/type';
 @import 'utils/reset';
 @import 'utils/mixins';
-
+*, button{
+    cursor: none;
+}
 html, body{
         scroll-behavior: smooth;
 }
@@ -19,6 +21,19 @@ body{
 }
 .p{
     line-height: 130%;
+}
+.customCursor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $orange;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
 }
 .header{
     position: sticky;
